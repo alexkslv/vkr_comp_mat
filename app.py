@@ -9,7 +9,7 @@ comp_mat_model = load_model('net_model_comp_mat')
 app = flask.Flask(__name__, template_folder='templates')
 
 @app.route("/", methods=['POST', 'GET'])
-def main():
+def main_app():
     if flask.request.method == 'GET':
         return flask.render_template('main.html')
 
@@ -30,5 +30,4 @@ def main():
                                                shag_nash=shag_nash,
                                                plot_nash=plot_nash)
 
-app.run()
 
