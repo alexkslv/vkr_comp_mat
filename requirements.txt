@@ -1,4 +1,4 @@
 Flask
 Gunicorn
-tensorflow
-keras
+tensorflow==2.10.0
+keras==2.10.0
