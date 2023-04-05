@@ -9,7 +9,7 @@ comp_mat_model = load_model('net_model_comp_mat')
 app = flask.Flask(__name__, template_folder='templates')
 
 @app.route("/", methods=['POST', 'GET'])
-def main_app():
+def main():
     if flask.request.method == 'GET':
         return flask.render_template('main.html')
 
