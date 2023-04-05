@@ -1,5 +1,8 @@
+import os
 import flask
 from keras.models import load_model
+
+os.environ['CUDA_VISIBLE_DEVICES'] = '-1'
 
 comp_mat_model = load_model('net_model_comp_mat')
 
@@ -27,5 +30,5 @@ def main():
                                                shag_nash=shag_nash,
                                                plot_nash=plot_nash)
 
-
+app.run()
 
