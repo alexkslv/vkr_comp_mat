@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<style>
+    form {
+        margin: auto;
+        width: 35%;
+    }
+
+    label {
+        font-size: 12px
+    }
+
+    .result {
+        margin: auto;
+        border: 1px solid #fff;
+    }
+</style>
+
+<head>
+    <title>
+        Композиционные материалы.
+    </title>
+    <form action="{{url_for('main')}}" method="post">
+        <fieldset>
+            <legend>Прогнозирование соотношения матрица/наполнитель</legend>
+            <br>
+            Количество отвердителя, м.%:
+            <br>
+            <input id="ko" name="kol_otverd" type="number" required>
+            <br>
+            <label for="ko">Предыдущее значение: {{kol_otverd}}</label>
+            <br><br>
+            Содержание эпоксидных групп,%_2:
+            <br>
+            <input id="ep" name="epoxid" type="number" required>
+            <br>
+            <label for="ep">Предыдущее значение: {{epoxid}}</label>
+            <br><br>
+            Потребление смолы, г/м2:
+            <br>
+            <input id="sm" name="smola" type="number" required>
+            <br>
+            <label for="sm">Предыдущее значение: {{smola}}</label>
+            <br><br>
+            Угол нашивки, град:
+            <br>
+            <input id="un" name="ugol_nash" type="number" required>
+            <br>
+            <label for="un">Предыдущее значение: {{ugol_nash}}</label>
+            <br><br>
+            Шаг нашивки:
+            <br>
+            <input id="sn" name="shag_nash" type="number" required>
+            <br>
+            <label for="sn">Предыдущее значение: {{shag_nash}}</label>
+            <br><br>
+            Плотность нашивки:
+            <br>
+            <input id="pn" name="plot_nash" type="number" required>
+            <br>
+            <label for="pn">Предыдущее значение: {{plot_nash}}</label>
+            <br>
+            <br>
+            <input type="submit" value="Спрогнозировать">
+        </fieldset>
+    </form>
+    <div class="result" align="center">
+        {% if result %}
+            <br>
+            <p style="font-size: 20px;">
+                Рекомендуемое соотношение матрица/наполнитель:
+            </p>
+            <p style="font-size: 20px;">{{result}}</p>
+        {% endif %}
+    </div>
+</head>
