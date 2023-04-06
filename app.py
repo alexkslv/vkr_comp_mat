@@ -1,10 +1,10 @@
 import os
 import flask
-from keras.models import load_model
+from tensorflow import keras
 
 os.environ['CUDA_VISIBLE_DEVICES'] = '-1'
 
-comp_mat_model = load_model('net_model_comp_mat')
+comp_mat_model = keras.models.load_model('net_model_comp_mat')
 
 app = flask.Flask(__name__, template_folder='templates')
 
