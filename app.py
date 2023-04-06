@@ -3,6 +3,7 @@ import flask
 from tensorflow import keras
 
 os.environ['CUDA_VISIBLE_DEVICES'] = '-1'
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 
 comp_mat_model = keras.models.load_model('net_model_comp_mat')
 
